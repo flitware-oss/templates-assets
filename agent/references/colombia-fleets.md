@@ -1,6 +1,6 @@
 # Colombia `fleets` — the 9 documents, mapped
 
-All share the official-letters skeleton (letter-layout.md), the 11-row
+All share the official-letters skeleton ([recipe-official-letters.md](recipe-official-letters.md)), the 11-row
 vehicle table, and `ciudad` + `destinatario` inputs. Deltas only:
 
 1. **carta-aceptacion** — `Señores` + multiline destinatario (the source

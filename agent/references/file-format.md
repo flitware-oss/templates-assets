@@ -47,15 +47,17 @@ travel — the importer and backend hooks re-derive them.
 
 ## Schema elements
 
-- `text`: `{name, type: "text", content, position: {x, y}, width, height,
-  fontSize?, alignment? ("left"|"center"|"right"|"justify")}`.
-  Multiline via `\n`. Sizes in **mm**. Every schema needs a unique `name`
-  and finite `width`/`height`.
-- `line`: `{name, type: "line", position, width, height}` — use for
-  signature rules and dividers (height `0.5`).
-- Also allowed: `image` (Data URL only, ≤ periphery limits — prefer none),
-  `table`, `list`, `signature`, `qrcode`. Unknown `type` rejects the file.
-- `readOnly` expressions are rejected. `fontName` other than default warns.
+One array entry per page in `definition.schemas` (multi-page allowed).
+Sizes in **mm**. Every schema needs a unique `name` and finite
+`width`/`height`. Allowed types: `text`, `line`, `list`, `table`,
+`image` (Data URL only — prefer none), `signature`, `qrcode`. Unknown
+`type` rejects the file; `readOnly` expressions are rejected;
+`fontName` other than default warns. Full catalog with verified
+examples: [components.md](components.md).
+
+Page geometry: `A4` (210 × 297) or `Letter` (215.9 × 279.4), portrait or
+landscape via `basePdf` dimensions; `settings.pageSize` + `orientation`
+must match. See [layout-system.md](layout-system.md).
 
 ## Custom fields (envelope `customFields`)
 
